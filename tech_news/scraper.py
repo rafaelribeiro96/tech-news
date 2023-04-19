@@ -29,10 +29,13 @@ def scrape_updates(html_content):
 
 
 def scrape_next_page_link(html_content):
-    """Seu código deve vir aqui"""
-
+    selector = parsel.Selector(text=html_content)
+    next_page = selector.css(".next.page-numbers::attr(href)").get()
+    return next_page
 
 # Requisito 4
+
+
 def scrape_news(html_content):
     """Seu código deve vir aqui"""
 
